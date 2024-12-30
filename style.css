@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background-color: #1d1f29*/
+    background-image: url(background.jpg);
+    background-size: 40%;
+    
+}
+
+#questWindow {
+    width: 1700px;
+    height: 700px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+}
+
+#leftSideQuestWindow {
+    width: 900px;
+    background-color: #1a1c23;
+}
+
+#rightSideQuestWindow {
+    width: 800px;
+    padding: 0;
+    background-image: linear-gradient(to right, #1a1c23, rgba(255, 0, 0, 0)), url('dwarf.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 5px 5px 0;
+}
+
+#textField {
+    width: 700px;
+    height: 400px;
+    margin: 80px auto 0 auto;
+    padding: 20px;
+    align-self: center;
+    background-color: #111218;
+    border-radius: 5px 5px 0 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    color: #FFFFFF;
+    border-bottom: 1px solid #1a232c;
+    word-wrap: break-word;
+}
+
+#questDialogMenu{
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#textInput {
+    width: 580px;
+    height: 60px;
+    padding-left: 15px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    background-color: #111218;
+    color: #FFFFFF;
+}
+
+#textInput:focus {
+    outline: none;
+}
+
+#questButton {
+    width: 120px;
+    height: 60px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    border-radius:  0 0 5px 0;
+    background-color: #111218;
+    color: #dfdfdf;
+    cursor: pointer;
+}
+
+#questButton:hover {
+    background-color: #0e0e0e;
+}
+
+#questButton:active {
+    background-color: #111111;
+}
+
+#clearDataButton {
+    width: 40px;
+    height: 60px;
+    border: none;
+    border-radius: 0 0 0 5px;
+    background-color: #111218;
+    color: #FFFFFF;
+    background-image: url('x.png');
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#clearDataButton:hover {
+    background-color: #0e0e0e;
+}
+
+#clearDataButton:active {
+    background-color: #111111;
+}
