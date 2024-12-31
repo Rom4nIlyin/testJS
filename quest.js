@@ -1,19 +1,19 @@
 // jQuery
 
-const $textInput = $('#textInput'),
-    $questButton = $('#questButton'),
-    $textField = $('#textField'),
-    $clearDataButton = $('#clearDataButton');
+const textInput = $('#textInput'),
+    questButton = $('#questButton'),
+    textField = $('#textField'),
+    clearDataButton = $('#clearDataButton');
 
-$questButton.on('click', () => {
-    $questButton.text() === 'Применить' && $textInput.val() !== '' ?
-        ($textField.text($textInput.val()), $questButton.text('Удалить')) : 
-        ($textField.text(''), $questButton.text('Применить'));
+questButton.on('click', () => {
+    questButton.text() === 'Применить' && textInput.val() !== '' ?
+        (textField.text(textInput.val()), questButton.text('Удалить')) : 
+        (textField.text(''), questButton.text('Применить'));
 });
 
-$clearDataButton.on('click', () => {
-    if ($textInput.val()) {
-        $textInput.val('')
+clearDataButton.on('click', () => {
+    if (textInput.val()) {
+        textInput.val('')
     }
 });
 
