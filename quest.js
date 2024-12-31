@@ -4,7 +4,7 @@ const textInput = document.getElementById('textInput'),
     clearDataButton = document.getElementById('clearDataButton');
 
 questButton.onclick = () => {
-    questButton.textContent = (questButton.textContent === 'Применить' && textInput.value != '') ? 
+    questButton.textContent = (questButton.textContent === 'Применить') && textInput.value != '' ? 
         (textField.textContent = textInput.value, 'Удалить') : 
         (textField.textContent = '', 'Применить');
 };
