@@ -1,15 +1,22 @@
 body {
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     /*background-color: #1d1f29*/
     background-image: url(background.jpg);
     background-size: 40%;
-    
 }
 
-#questWindow {
+.centerSide {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.questWindow {
     width: 1700px;
     height: 700px;
     display: flex;
@@ -17,12 +24,12 @@ body {
     border-radius: 10px;
 }
 
-#leftSideQuestWindow {
+.leftSideQuestWindow {
     width: 900px;
     background-color: #1a1c23;
 }
 
-#rightSideQuestWindow {
+.rightSideQuestWindow {
     width: 800px;
     padding: 0;
     background-image: linear-gradient(to right, #1a1c23, rgba(255, 0, 0, 0)), url('dwarf.png');
@@ -31,7 +38,7 @@ body {
     border-radius: 0 5px 5px 0;
 }
 
-#textField {
+.textField {
     width: 700px;
     height: 450px;
     margin: 60px auto 0 auto;
@@ -46,14 +53,14 @@ body {
     word-wrap: break-word;
 }
 
-#questDialogMenu{
+.questDialogMenu{
     width: 100%;
     padding: 0;
     display: flex;
     justify-content: center;
 }
 
-#textInput {
+.textInput {
     width: 580px;
     height: 60px;
     padding-left: 15px;
@@ -64,11 +71,11 @@ body {
     color: #FFFFFF;
 }
 
-#textInput:focus {
+.textInput:focus {
     outline: none;
 }
 
-#questButton {
+.questButton {
     width: 120px;
     height: 60px;
     border: none;
@@ -80,15 +87,15 @@ body {
     cursor: pointer;
 }
 
-#questButton:hover {
+.questButton:hover {
     background-color: #0e0e0e;
 }
 
-#questButton:active {
+.questButton:active {
     background-color: #111111;
 }
 
-#clearDataButton {
+.clearDataButton {
     width: 40px;
     height: 60px;
     border: none;
@@ -102,10 +109,32 @@ body {
     cursor: pointer;
 }
 
-#clearDataButton:hover {
+.clearDataButton:hover {
     background-color: #0e0e0e;
 }
 
-#clearDataButton:active {
+.clearDataButton:active {
+    background-color: #111111;
+}
+
+.linkButtonToOtherHmtl {
+    width: 200px;
+    height: 60px;
+    border: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    background-color: #111218;
+    color: #c4c4c4;
+    cursor: pointer;
+    margin-top: 30px;
+    align-self: flex-end;
+}
+
+.linkButtonToOtherHmtl:hover {
+    background-color: #0e0e0e;
+}
+
+.linkButtonToOtherHmtl:active {
     background-color: #111111;
 }

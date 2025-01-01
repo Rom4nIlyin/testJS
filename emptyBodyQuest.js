@@ -1,43 +1,30 @@
 $(document).ready(function() {
-    
-    // Переменные блоков для создания окошка с квестом
-    const $body = $('body');
-
-    const $questWindow = $('<div id="questWindow">'),
-        $leftSide = $('<div id="leftSideQuestWindow">'),
-        $rightSide = $('<div id="rightSideQuestWindow">');
-
-    const $textField = $('<div id="textField">'),
-        $questDialogMenu = $('<div id="questDialogMenu">');
+    // Переменные для создания страницы
+    const $body = $('body'),
+        $centerSide = $('<div class="centerSide">'),
+        $questWindow = $('<div class="questWindow">'),
+        $leftSide = $('<div class="leftSideQuestWindow">'),
+        $rightSide = $('<div class="rightSideQuestWindow">'),
+        $textField = $('<div class="textField">'),
+        $questDialogMenu = $('<div class="questDialogMenu">');
 
     // Создание окошка с квестом
-    $questDialogMenu.append('<button id="clearDataButton" title="Очистить текст"></button>');
-    $questDialogMenu.append('<input id="textInput" placeholder="Ввести текст квеста">');
-    $questDialogMenu.append('<button id="questButton">Применить</button>');
+    $questDialogMenu.append('<button class="clearDataButton" title="Очистить текст"></button>',
+                            '<input class="textInput" placeholder="Ввести текст квеста">',
+                            '<button class="questButton">Применить</button>');
 
-    $leftSide.append($textField);
-    $leftSide.append($questDialogMenu);
-    
-    $questWindow.append($leftSide);
-    $questWindow.append($rightSide);
-    
-    $body.append($questWindow);
-    
-    // Переменные для кнопок
-    const $textInput = $('#textInput'),
-        $questButton = $('#questButton'),
-        $clearDataButton = $('#clearDataButton');
+    $leftSide.append($textField, $questDialogMenu);
+    $questWindow.append($leftSide, $rightSide);
+    $centerSide.append($questWindow, '<button class="linkButtonToOtherHmtl">< Страница index</button>');
+    $body.append($centerSide);
 
     // Функции кнопок
-    $questButton.on('click', () => {
-        $questButton.text() === 'Применить' && $textInput.val() !== '' ?
-            ($textField.text($textInput.val()), $questButton.text('Удалить')) : 
-            ($textField.text(''), $questButton.text('Применить'));
+    $('.questButton').click(function() {
+        const textContent = $(this).text() === 'Применить' ? $('.textInput').val() : '';
+        $textField.text(textContent);
+        $(this).text(textContent ? 'Удалить' : 'Применить');
     });
-    
-    $clearDataButton.on('click', () => {
-        if ($textInput.val()) {
-            $textInput.val('')
-        }
-    });
+
+    $('.clearDataButton').click(() => $('.textInput').val(''));
+    $('.linkButtonToOtherHmtl').click(() => window.location.href = 'index.html');
 });

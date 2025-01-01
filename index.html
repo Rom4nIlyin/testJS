@@ -6,16 +6,19 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="questWindow">
-            <div id="leftSideQuestWindow">
-                <div id="textField"></div>
-                <div id="questDialogMenu">
-                    <button id="clearDataButton" title="Очистить текст"></button>
-                    <input id="textInput" placeholder="Ввести текст квеста">
-                    <button id="questButton">Применить</button>
+        <div class="centerSide">
+            <div class="questWindow">
+                <div class="leftSideQuestWindow">
+                    <div class="textField"></div>
+                    <div class="questDialogMenu">
+                        <button class="clearDataButton" title="Очистить текст"></button>
+                        <input class="textInput" placeholder="Ввести текст квеста">
+                        <button class="questButton">Применить</button>
+                    </div>
                 </div>
+                <div class="rightSideQuestWindow"></div>
             </div>
-            <div id="rightSideQuestWindow"></div>
+            <button class="linkButtonToOtherHmtl" onclick="document.location='emptyBody.html'">Страница emptyBody ></button>
         </div>
     </body>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
