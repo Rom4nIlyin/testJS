@@ -1,27 +1,38 @@
-body {
+* {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+}
+
+body, .centerSide, .questWindow, .questDialogMenu {
     display: flex;
+}
+
+body {
     justify-content: center;
-    align-items: center;
-    /*background-color: #1d1f29*/
     background-image: url(background.jpg);
     background-size: 40%;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 
 .centerSide {
     margin: 0;
-    padding: 0;
-    display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
 }
 
 .questWindow {
     width: 1700px;
     height: 700px;
-    display: flex;
     flex-direction: row;
     border-radius: 10px;
+}
+
+.questDialogMenu{
+    width: 100%;
+    padding: 0;
+    justify-content: center;
 }
 
 .leftSideQuestWindow {
@@ -46,95 +57,59 @@ body {
     align-self: center;
     background-color: #111218;
     border-radius: 5px 5px 0 0;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
     color: #FFFFFF;
     border-bottom: 1px solid #1a232c;
     word-wrap: break-word;
 }
 
-.questDialogMenu{
-    width: 100%;
-    padding: 0;
-    display: flex;
-    justify-content: center;
+.textInput, .questButton, .clearDataButton, .linkButtonToOtherHmtl {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #fff;
+    background-color: #111218;
+    border: none;
 }
 
 .textInput {
     width: 580px;
     height: 60px;
     padding-left: 15px;
-    border: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    background-color: #111218;
-    color: #FFFFFF;
 }
 
 .textInput:focus {
     outline: none;
 }
 
-.questButton {
-    width: 120px;
+.questButton, .clearDataButton, .linkButtonToOtherHmtl {
     height: 60px;
-    border: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
-    border-radius:  0 0 5px 0;
-    background-color: #111218;
-    color: #dfdfdf;
     cursor: pointer;
 }
 
-.questButton:hover {
-    background-color: #0e0e0e;
-}
-
-.questButton:active {
-    background-color: #111111;
+.questButton {
+    width: 120px;
+    border-radius: 0 0 5px 0;
 }
 
 .clearDataButton {
     width: 40px;
-    height: 60px;
-    border: none;
     border-radius: 0 0 0 5px;
-    background-color: #111218;
-    color: #FFFFFF;
     background-image: url('x.png');
     background-size: 20px 20px;
     background-repeat: no-repeat;
     background-position: center;
-    cursor: pointer;
-}
-
-.clearDataButton:hover {
-    background-color: #0e0e0e;
-}
-
-.clearDataButton:active {
-    background-color: #111111;
 }
 
 .linkButtonToOtherHmtl {
     width: 200px;
-    height: 60px;
-    border: none;
-    font-family: 'Arial', sans-serif;
-    font-size: 16px;
     border-radius: 5px;
-    background-color: #111218;
-    color: #c4c4c4;
-    cursor: pointer;
     margin-top: 30px;
     align-self: flex-end;
 }
 
-.linkButtonToOtherHmtl:hover {
+.questButton:hover, .clearDataButton:hover, .linkButtonToOtherHmtl:hover {
     background-color: #0e0e0e;
 }
 
-.linkButtonToOtherHmtl:active {
+.questButton:active, .clearDataButton:active, .linkButtonToOtherHmtl:active {
     background-color: #111111;
 }

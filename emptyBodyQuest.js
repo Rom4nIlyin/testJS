@@ -1,28 +1,29 @@
 $(document).ready(function() {
-    // Переменные для создания страницы
-    const $body = $('body'),
-        $centerSide = $('<div class="centerSide">'),
-        $questWindow = $('<div class="questWindow">'),
-        $leftSide = $('<div class="leftSideQuestWindow">'),
-        $rightSide = $('<div class="rightSideQuestWindow">'),
-        $textField = $('<div class="textField">'),
-        $questDialogMenu = $('<div class="questDialogMenu">');
+    $('body').append(`
+        <div class="centerSide">
+            <div class="questWindow">
+                <div class="leftSideQuestWindow">
+                    <div class="textField"></div>
+                    <div class="questDialogMenu">
+                        <button class="clearDataButton" title="Очистить текст"></button>
+                        <input class="textInput" placeholder="Ввести текст квеста">
+                        <button class="questButton">Применить</button>
+                    </div>
+                </div>
+                <div class="rightSideQuestWindow"></div>
+            </div>
+            <button class="linkButtonToOtherHmtl">< Страница index</button>
+        </div>
+    `);
 
-    // Создание окошка с квестом
-    $questDialogMenu.append('<button class="clearDataButton" title="Очистить текст"></button>',
-                            '<input class="textInput" placeholder="Ввести текст квеста">',
-                            '<button class="questButton">Применить</button>');
+    const $textField = $('.textField'),
+          $textInput = $('.textInput'),
+          $questButton = $('.questButton');
 
-    $leftSide.append($textField, $questDialogMenu);
-    $questWindow.append($leftSide, $rightSide);
-    $centerSide.append($questWindow, '<button class="linkButtonToOtherHmtl">< Страница index</button>');
-    $body.append($centerSide);
-
-    // Функции кнопок
-    $('.questButton').click(function() {
-        const textContent = $(this).text() === 'Применить' ? $('.textInput').val() : '';
-        $textField.text(textContent);
-        $(this).text(textContent ? 'Удалить' : 'Применить');
+    $questButton.on('click', () => {
+        const text = $questButton.text() === 'Применить' ? $textInput.val() : '';
+        $textField.html(text);
+        $questButton.text(text ? 'Удалить' : 'Применить');
     });
 
     $('.clearDataButton').click(() => $('.textInput').val(''));

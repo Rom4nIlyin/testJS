@@ -5,7 +5,5 @@ $(document).ready(function() {
             $(this).text(textContent ? 'Удалить' : 'Применить');
     });
 
-    $('.clearDataButton').click(() => {
-        $('.textInput').val('');
-    });
+    $('.clearDataButton').click(() => $('.textInput').val(''));
 });
