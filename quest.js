@@ -1,9 +1,13 @@
 $(document).ready(function() {
-    $('.questButton').click(function() {
-        const textContent = $(this).text() === 'Применить' ? $('.textInput').val() : '';
-            $('.textField').text(textContent);
-            $(this).text(textContent ? 'Удалить' : 'Применить');
-    });
+    const $textField = $('.textField'),
+          $textInput = $('.textInput'),
+          $questButton = $('.questButton');
 
+    $questButton.on('click', () => {
+        const text = $questButton.text() === 'Применить' ? $textInput.val() : '';
+        $textField.html(text);
+        $questButton.text(text ? 'Удалить' : 'Применить');
+    });
+    
     $('.clearDataButton').click(() => $('.textInput').val(''));
 });

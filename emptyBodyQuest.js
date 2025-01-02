@@ -1,31 +1,45 @@
-$(document).ready(function() {
-    $('body').append(`
-        <div class="centerSide">
-            <div class="questWindow">
-                <div class="leftSideQuestWindow">
-                    <div class="textField"></div>
-                    <div class="questDialogMenu">
-                        <button class="clearDataButton" title="Очистить текст"></button>
-                        <input class="textInput" placeholder="Ввести текст квеста">
-                        <button class="questButton">Применить</button>
-                    </div>
-                </div>
-                <div class="rightSideQuestWindow"></div>
-            </div>
-            <button class="linkButtonToOtherHmtl">< Страница index</button>
-        </div>
-    `);
+const app = document.getElementById('app');
+if (app) {
+  const fragment = document.createDocumentFragment();
+  const container = document.createElement('div');
+  container.className = 'quest-window';
+  container.innerHTML = (`
+      <div class="left-side">
+          <div class="text"></div>
+          <div class="controls">
+              <input type="text" placeholder="Ввести текст квеста">
+              <button type="button" class="clear hidden" title="Очистить текст">&times;</button>
+          </div>
+      </div>
+      <div class="right-side"></div>
+  `);
 
-    const $textField = $('.textField'),
-          $textInput = $('.textInput'),
-          $questButton = $('.questButton');
+  fragment.appendChild(container);
+  app.append(fragment);
 
-    $questButton.on('click', () => {
-        const text = $questButton.text() === 'Применить' ? $textInput.val() : '';
-        $textField.html(text);
-        $questButton.text(text ? 'Удалить' : 'Применить');
-    });
+  const controls = document.querySelector('.controls');
+  if (controls) {
+    const result = document.querySelector('.text');
+    const input = controls.querySelector('input[type="text"]');
+    const clearButton = controls.querySelector('.clear');
+    if (input) {       
+      input.onkeyup = (e) => {
+        const text = e.target.value;
+        result.textContent = text;
 
-    $('.clearDataButton').click(() => $('.textInput').val(''));
-    $('.linkButtonToOtherHmtl').click(() => window.location.href = 'index.html');
-});
+        text.length && clearButton?.classList?.contains('hidden') && clearButton.classList.remove('hidden');
+
+        !text && !clearButton?.classList?.contains('hidden') && clearButton.classList.add('hidden');
+      };
+
+      if (clearButton) {
+        clearButton.onclick = () => {
+          input.value = '';
+          result.textContent = '';
+        };
+      }
+    }
+  }
+}
+
+
